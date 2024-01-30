@@ -1,0 +1,30 @@
+DROP TABLE salegame;
+DROP TABLE game;
+
+CREATE TABLE game (
+ gameId BIGINT NOT NULL AUTO_INCREMENT,
+ dateTimeEntry DATETIME NOT NULL,
+ dateTimeCelebration DATETIME NOT NULL,
+ visit VARCHAR(100) NOT NULL,
+ price DOUBLE NOT NULL,
+ availableTickets BIGINT NOT NULL,
+ soldTickets BIGINT NOT NULL,
+ CONSTRAINT GamePK PRIMARY KEY (gameId),
+ CONSTRAINT ValidPriceGame CHECK (price >= 0),
+ CONSTRAINT ValidAvailableTickets CHECK (availableTickets >= 0),
+ CONSTRAINT SoldTickets CHECK (soldTickets >= 0)
+) ENGINE = InnoDB;
+
+CREATE TABLE salegame (
+ saleId BIGINT NOT NULL AUTO_INCREMENT,
+ gameId BIGINT NOT NULL,
+ userEmail VARCHAR(100) NOT NULL,
+ cardNum VARCHAR(100) NOT NULL,
+ takedTickets BOOLEAN,
+ dateTimeSale DATETIME NOT NULL,
+ ticketNum BIGINT NOT NULL,
+ price DOUBLE NOT NULL,
+ CONSTRAINT SalePK PRIMARY KEY (saleId),
+ CONSTRAINT GameFK FOREIGN KEY (gameId)
+ REFERENCES Game (gameId) ON DELETE CASCADE
+) ENGINE = InnoDB;

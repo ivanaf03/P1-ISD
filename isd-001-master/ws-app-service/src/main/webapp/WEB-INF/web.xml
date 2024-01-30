@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <distributable/>
+
+    <display-name>WS App Service</display-name>
+
+    <!-- REST service -->
+
+    <servlet>
+        <display-name>GamesServlet</display-name>
+        <servlet-name>GamesServlet</servlet-name>
+        <servlet-class>
+            es.udc.ws.app.restservice.servlets.GamesServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <display-name>SalesServlet</display-name>
+        <servlet-name>SalesServlet</servlet-name>
+        <servlet-class>
+            es.udc.ws.app.restservice.servlets.SalesServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GamesServlet</servlet-name>
+        <url-pattern>/games/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SalesServlet</servlet-name>
+        <url-pattern>/sales/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ThriftGameServiceServlet</servlet-name>
+        <servlet-class>es.udc.ws.app.thriftservice.ThriftGameServiceServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ThriftGameServiceServlet</servlet-name>
+        <url-pattern>/thrift/appservice</url-pattern>
+    </servlet-mapping>
+
+    <!-- General configuration -->
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+</web-app>

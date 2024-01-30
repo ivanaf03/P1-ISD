@@ -1,0 +1,59 @@
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo A' '2024-08-15T17:00' 20 10"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo B' '2024-09-15T12:00' 15 250"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo C'  '2024-10-15T19:00' 10 200"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch ' ' '2024-10-15T19:00' 10 200"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo D'  '2023-07-15T19:00' 10 200"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo D'  '2023-07-15T11:00' -1 200"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-addMatch 'Equipo D'  '2023-07-15T11:00' 10 0"
+
+
+UPDATE game SET dateTimeCelebration='2023-09-15 12:00' WHERE gameId=2;
+
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 1 'user1@udc.es' 5 '1111222233334444'"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 1 'user2@udc.es' 4 '2222333344445555'"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 3 'user1@udc.es' 8 '1111222233334444' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 3 'user3@udc.es' 7 '3333444455556666' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 1 'user3@udc.es' 2 '3333444455556666' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 2 'user3@udc.es' 1 '3333444455556666' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 3 ' ' 4 '6666777788889999' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 3 'user6@udc.es' 4 '66667777' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 3 'user6@udc.es' 0 '6666777788889999' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-buy 9 'user6@udc.es' 4 '6666777788889999' "
+
+
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-collect 1 '1111222233334444' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-collect 1 '1111222233334444' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-collect 2 '1111222233334444' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-collect 9 '1111222233334444' "
+
+
+
+
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatches '2024-09-01' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatches '2024-11-01' "
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatches '2024-08-01' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatches '2023-08-01' "
+
+
+
+
+
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatch 2 "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findMatch 9 "
+
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findPurchases 'user1@udc.es'"
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findPurchases 'user2@udc.es' "
+
+mvn exec:java -Dexec.mainClass="es.udc.ws.app.client.ui.AppServiceClient" -Dexec.args="-findPurchases 'user6@udc.es' "
+
